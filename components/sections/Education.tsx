@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Education() {
   const { index, title, subtitle, text, items, backgroundImage } = siteContent.education;
@@ -24,7 +25,7 @@ export default function Education() {
 
         <div className="relative min-h-[260px] w-full overflow-hidden rounded-sm border border-gold-500/20">
           <Image
-            src={backgroundImage}
+            src={withBasePath(backgroundImage)}
             alt=""
             fill
             sizes="500px"

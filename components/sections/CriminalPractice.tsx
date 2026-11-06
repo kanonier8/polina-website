@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function CriminalPractice() {
   const { index, title, subtitle, cards } = siteContent.criminalPractice;
@@ -15,7 +16,7 @@ export default function CriminalPractice() {
             <div key={card.title} className="flex flex-col bg-maroon-950">
               <div className="relative h-28 w-full">
                 <Image
-                  src={card.image}
+                  src={withBasePath(card.image)}
                   alt=""
                   fill
                   sizes="260px"

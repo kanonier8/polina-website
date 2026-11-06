@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PhotoSlot from "@/components/PhotoSlot";
 import { siteContent } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Hero() {
   const { index, title, subtitle, ctaLabel, ctaHref, highlights, backgroundImage, photo } =
@@ -9,7 +10,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-gold-500/15">
       <Image
-        src={backgroundImage}
+        src={withBasePath(backgroundImage)}
         alt=""
         fill
         priority

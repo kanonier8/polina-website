@@ -2,6 +2,7 @@ import Image from "next/image";
 import PhotoSlot from "@/components/PhotoSlot";
 import SectionHeading from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Contacts() {
   const {
@@ -23,7 +24,7 @@ export default function Contacts() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative overflow-hidden border-b border-gold-500/15 px-6 py-20 lg:border-r lg:border-b-0 lg:px-10">
           <Image
-            src={backgroundImage}
+            src={withBasePath(backgroundImage)}
             alt=""
             fill
             sizes="700px"

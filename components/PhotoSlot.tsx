@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Photo } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function PhotoSlot({
   photo,
@@ -15,7 +16,7 @@ export default function PhotoSlot({
   if (photo.src) {
     return (
       <Image
-        src={photo.src}
+        src={withBasePath(photo.src)}
         alt={photo.alt}
         fill
         sizes={sizes ?? "400px"}

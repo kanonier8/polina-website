@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { siteContent } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 
 export default function MilitaryPractice() {
   const { index, title, subtitle, items, image } = siteContent.militaryPractice;
@@ -10,7 +11,7 @@ export default function MilitaryPractice() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.7fr_1.1fr] lg:px-10">
         <div className="relative min-h-[260px] w-full overflow-hidden rounded-sm border border-gold-500/20">
           <Image
-            src={image}
+            src={withBasePath(image)}
             alt=""
             fill
             sizes="500px"
